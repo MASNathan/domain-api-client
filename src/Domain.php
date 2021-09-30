@@ -25,7 +25,7 @@ final class Domain
     private function buildEndpoint(string $section, array $params = []): string
     {
         $endpoint = sprintf("https://%s/%s", $this->host, $section);
-        if (!$params) {
+        if (! $params) {
             return $endpoint;
         }
 
@@ -38,7 +38,7 @@ final class Domain
             'timeout' => 30,
             'headers' => [
                 'x-rapidapi-host' => $this->host,
-                'x-rapidapi-key'  => $this->key,
+                'x-rapidapi-key' => $this->key,
             ],
         ]);
     }
@@ -51,7 +51,7 @@ final class Domain
                 'timeout' => 30,
                 'headers' => [
                     'x-rapidapi-host' => $this->host,
-                    'x-rapidapi-key'  => $this->key,
+                    'x-rapidapi-key' => $this->key,
                 ],
             ]);
         }
